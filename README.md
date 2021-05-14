@@ -33,4 +33,5 @@ I am using the Civic Info API
 ```
 ### WireFrams
 https://whimsical.com/who-s-reppin-2gQ8hG3DiVcwog6y9w6yKd
-![Wire Frame]("https://whimsical.com/embed/2gQ8hG3DiVcwog6y9w6yKd")
+![image](https://user-images.githubusercontent.com/69879139/118327555-ba33fb00-b4d3-11eb-8a74-dd402ab08045.png)
+
