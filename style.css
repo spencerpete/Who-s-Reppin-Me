@@ -1,0 +1,14 @@
+.rep-container {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.rep-data {
+  border: 1px solid black;
+}
+
+.rep-img {
+  width: 180px;
+  height: auto;
+}
