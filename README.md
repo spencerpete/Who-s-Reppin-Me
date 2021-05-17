@@ -58,8 +58,11 @@ May 19  | CSS Styling |
 May 20  | More CSS Stlying, add features from Post-MVP | 
 May 21  | Present! | 
 
+### Priority Matrix
 
+https://reppin.airfocus.com/share/7b4abab49f06f0207877edc0adb254ac
 
+### Time Line 
 
 
 
