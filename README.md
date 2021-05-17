@@ -52,8 +52,8 @@ https://whimsical.com/who-s-reppin-2gQ8hG3DiVcwog6y9w6yKd
 Date | Goal | 
 --- | --- | 
 May 14 - 16  | Find API, create project pitch |
-May 17  | Project aprroval | 
-May 18  | lay down basic HTML, collect info/ solidify info paths | 
+May 17  | Project aprroval, lay down basic HTML, collect Data | 
+May 18  | Solidify data paths andconnect data to Elements | 
 May 19  | CSS Styling | 
 May 20  | More CSS Stlying, add features from Post-MVP | 
 May 21  | Present! | 
@@ -63,6 +63,21 @@ May 21  | Present! |
 https://reppin.airfocus.com/share/7b4abab49f06f0207877edc0adb254ac
 
 ### Time Line 
+Task | Estimated Time | Current TIme | Actual Time
+--- | --- | --- | ---
+Lay Down basic HTML | 30 min |  |
+fetch API Data | 1 hr |  |
+Orginaize data | 3 hr |  |
+Attach sifted date to Elements | 1 hr 30 min |  |
+Connect search input value with Axios search param. | 1 hr |  | 
+Run test with mult. input values | 30 min |  |
+Debug any issues | 30 min |  |
+Dry up JS | 30 min |  |
+CSS Styling of Search bar and input | 1 hr |  |
+CSS Styling of Header  | 1 hr |  |
+CSS Styling of 'Rep' boxes | 2 hr  |  |
+CSS responsive design | 2 hr |  |
+Total | 14 hr 30 min |  |
 
 
 
