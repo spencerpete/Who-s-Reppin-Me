@@ -66,18 +66,19 @@ Task | Estimated Time | Current TIme | Actual Time
 --- | --- | --- | ---
 Lay Down basic HTML | 1 hr |  |
 Fetch API Data | 3 hr |  |
-Organize data with filters | 3 hr |  |
-Append Data to responsive Elements | 2 hr |  |
+Organize data with filters | 4 hr |  |
+Append Data to responsive Elements | 3 hr |  |
 Connect search input value with Axios search param. | 2 hr |  | 
-Run test with mult. input values | 30 min |  |
+Run test with mult. input values | 2 hr |  |
+remove previous search results | 3hr |  |
 Debug any issues | 2 hr |  |
-Refactor JS functionality  | 1 hr |  |
+Refactor JS functionality  | 2 hr |  |
 CSS Styling of Search bar and input | 2 hr |  |
 CSS Styling of Header  | 1 hr |  |
 CSS Styling of 'Rep' boxes | 2 hr  |  |
 CSS responsive design (mobile) | 2 hr | |
 CSS responsive design  (desktop) | 3 hr |  |
-Total | 23 hr 30 min |  |
+Total | 32 hr |  |
 
 
 
