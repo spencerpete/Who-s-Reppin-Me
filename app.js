@@ -23,12 +23,16 @@ const repData = (response) => {
       let websiteUrl = officials[element].urls[0]
       let name = officials[element].name
       let imgUrl = officials[element].photoUrl
+      let phone = officials[element].phones[0]
       let showRepData = `
     <div class="rep-data">
       <img class='rep-img'src=${imgUrl} onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Greater_coat_of_arms_of_the_United_States.svg/270px-Greater_coat_of_arms_of_the_United_States.svg.png'">
-      <h3>Title: ${title}</h3>
-      <h3>${name}</h3>
-      <h3><a href=${websiteUrl}>Rep site</a.</h3>
+      <div class='rep-info'>
+        <h4 class='rep-info-contnt'>${title}:</br>${name}</h4>
+        <h4 class='rep-info-contnt'>Website: <a href=${websiteUrl}>Rep site</a></h4>
+        <h4 class='rep-info-contnt'>Contact: <a href='tel:'${phone}>${phone}</a></h4>
+        <button class='rep-info-contnt' type="submit">Save Reps Info</button>
+      </div>  
     </div>
     `
       repContianer.insertAdjacentHTML("beforeend", showRepData)

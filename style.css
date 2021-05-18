@@ -9,6 +9,7 @@ article {
   text-align: center;
   width: 70%;
   margin: 0 auto;
+  font-size: 15px;
 }
 
 form {
@@ -35,10 +36,47 @@ button {
 }
 
 .rep-data {
-  border: 1px solid black;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  background-color: aliceblue;
+  width: 95%;
+  height: 200px;
+  margin: 10px auto;
+  display: flex;
 }
 
 .rep-img {
-  width: 180px;
+  width: 140px;
   height: auto;
+  margin: 0 5px;
+  align-self: center;
+}
+
+.rep-info {
+  padding: 5px;
+}
+
+.rep-info-contnt {
+  margin: 5px auto;
+}
+
+/* Desktop web formatting */
+
+@media only screen and (min-width: 600px){
+header {
+  font-size: 30px;
+}
+article{
+  font-size: 20px;
+}
+.rep-img {
+  margin: 5px;
+}
+.rep-data {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 320px;
+}
+  
 }
