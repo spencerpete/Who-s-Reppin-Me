@@ -1,10 +1,11 @@
 const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
+const myKey = config.myApiKey
 
 // const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=AIzaSyC0u348ouE2XSgQqYf6SXKRmqfVdxqtehE`
 
 const fetchData = async (input) => {
-  const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=AIzaSyC0u348ouE2XSgQqYf6SXKRmqfVdxqtehE`
+  const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
   try {
     const response = await axios.get(url)
     console.log(response)
@@ -17,7 +18,6 @@ const fetchData = async (input) => {
 const repData = (response) => {
   const offices = response.data.offices
   const officials = response.data.officials
-
   offices.forEach((element) => {
     const officialIndices = element.officialIndices
     let title = element.name
@@ -43,12 +43,17 @@ const removeReps = () => {
   }
 }
 
+const removeArticle = () => {
+  let article = document.querySelector('article')
+  document.body.removeChild(article)
+}
+
 form.addEventListener('submit', e => {
   e.preventDefault()
   removeReps()
+  removeArticle()
   const inputValue = document.querySelector('#adress').value
   console.log(inputValue)
   fetchData(inputValue)
 })
 form.addEventListener('reset',removeReps)
-//  fetchData()

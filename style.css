@@ -1,9 +1,39 @@
+header {
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+button, input {
+  border-radius: 5px;
+  margin: 10px 5px;
+  padding: 5px 8px;
+}
+
+button {
+  background-color: #7c6beb;
+}
+
 .rep-container {
   /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .rep-data {
   border: 1px solid black;
 }

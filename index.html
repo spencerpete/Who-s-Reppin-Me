@@ -7,17 +7,22 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="./style.css">
   <script defer src="./app.js"></script>
+  <script src="./config.js"></script>
   <title>Who's reppin me?</title>
 </head>
 <body>
  <header>
    <h1>Who's Reppin Me?</h1>
-   <form action="submit">
-     <input type="text" name="address" id="adress" placeholder="Adress, City State and Zipcode">
-     <button type="submit">Search</button>
-     <button type="reset">Clear</button>
-   </form>
   </header> 
+  <article>
+    <h2>Many of us don't know who our representatives are, if we don't have this info it is hard to hold our representatives accountable!</h2>
+    <p>Search your adress and see who reps you!</p>
+  </article>
+  <form action="submit">
+    <input type="text" name="address" id="adress" placeholder="Adress, City State and Zipcode">
+    <button type="submit">Search</button>
+    <button type="reset">Clear</button>
+  </form>
   <div class='rep-container'></div>
 </body>
 </html>
