@@ -28,9 +28,9 @@ const repData = (response) => {
     <div class="rep-data">
       <img class='rep-img'src=${imgUrl} onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Greater_coat_of_arms_of_the_United_States.svg/270px-Greater_coat_of_arms_of_the_United_States.svg.png'">
       <div class='rep-info'>
-        <h4 class='rep-info-contnt'>${title}:</br>${name}</h4>
-        <h4 class='rep-info-contnt'>Website: <a href=${websiteUrl}>Rep site</a></h4>
-        <h4 class='rep-info-contnt'>Contact: <a href='tel:'${phone}>${phone}</a></h4>
+        <h4 class='rep-info-contnt'>${title} :</br>${name}</h4>
+        <h4 class='rep-info-contnt'>Website : <a href=${websiteUrl}>Rep site</a></h4>
+        <h4 class='rep-info-contnt'>Contact : <a href='tel:'${phone}>${phone}</a></h4>
         <button class='rep-info-contnt' type="submit">Save Reps Info</button>
       </div>  
     </div>

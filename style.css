@@ -1,3 +1,7 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 header {
   background-color: darkgray;
   display: flex;
@@ -9,7 +13,7 @@ article {
   text-align: center;
   width: 70%;
   margin: 0 auto;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 form {
@@ -39,10 +43,12 @@ button {
   border: 1px solid darkgray;
   border-radius: 5px;
   background-color: aliceblue;
+  box-shadow: 5px 5px 5px;
   width: 95%;
   height: 200px;
   margin: 10px auto;
   display: flex;
+  justify-content: space-around;
 }
 
 .rep-img {
@@ -54,6 +60,7 @@ button {
 
 .rep-info {
   padding: 5px;
+  font-size: 15px;
 }
 
 .rep-info-contnt {
@@ -70,13 +77,16 @@ article{
   font-size: 20px;
 }
 .rep-img {
-  margin: 5px;
+  margin: 7px;
 }
 .rep-data {
   display: flex;
   flex-direction: column;
   width: 180px;
-  height: 320px;
+  height: 330px;
+  justify-content: space-between;
 }
-  
+.rep-info {
+  font-size: 12px;
+}
 }
