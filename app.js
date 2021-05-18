@@ -2,8 +2,6 @@ const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
 const myKey = config.myApiKey
 
-// const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=AIzaSyC0u348ouE2XSgQqYf6SXKRmqfVdxqtehE`
-
 const fetchData = async (input) => {
   const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
   try {
