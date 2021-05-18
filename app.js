@@ -50,4 +50,5 @@ form.addEventListener('submit', e => {
   console.log(inputValue)
   fetchData(inputValue)
 })
+form.addEventListener('reset',removeReps)
 //  fetchData()
