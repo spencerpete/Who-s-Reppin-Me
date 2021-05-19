@@ -1,5 +1,7 @@
+const repSearch = document.querySelector('.rep-search')
 const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
+const electionContainer = document.querySelector('.election-container')
 const myKey = config.myApiKey
 // Function gathers data from Civiv info API
 const fetchData = async (input) => {
@@ -12,6 +14,49 @@ const fetchData = async (input) => {
   } catch (error){
     console.error(error)
   }
+}
+
+const fetchElectionData = async (input) => {
+  const url = `https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=${input}&officialOnly=true&returnAllAvailableData=true&key=${myKey}`
+  try {
+    const result = await axios.get(url)
+    console.log(result)
+    electionData(result)
+    return result
+    // return result 
+  } catch (error) {
+    console.error(error)
+  }
+}
+const electionData = result => {
+  let showElectionData;
+  if (result.data.election == null) {
+    showElectionData =`
+    <div class='election-results'>
+    <h3>Your Next Upcoming Election :</h3>
+    <h4>You Have No Upcoming Elections</h4>
+    `
+  } else {
+    const election = result.data.election.name
+    const electionDay = result.data.election.electionDay
+    const pollingLocation = result.data.pollingLocations[0].address
+    const pollingCity = pollingLocation.city
+    const pollingAdress = pollingLocation.line1
+    const pollingState = pollingLocation.state
+    const pollingZip = pollingLocation.zip
+    const pollingBuilding = pollingLocation.locationName
+    const pollingHours = result.data.pollingLocations[0].pollingHours
+    showElectionData = `
+    <div class='election-results'>
+      <h3>Your Next Upcoming Election :</h3>
+      <h4>Elction : ${election}</h4>
+      <h4>Day : ${electionDay}</h4>
+      <h4>Polling Place : ${pollingBuilding}, ${pollingAdress}, ${pollingCity} ${pollingState} ${pollingZip}</h4>
+      <h4>Hours : ${pollingHours}</h4>
+    </div>
+    `
+  }
+  electionContainer.insertAdjacentHTML("beforeend", showElectionData)
 }
 // This functions gathers needed data and attaches them to elemtentsthat will be appended to the DOM
 const repData = (response) => {
@@ -46,19 +91,30 @@ const removeReps = () => {
     repContianer.removeChild(repContianer.lastChild)
   }
 }
+const removeElection = () => {
+  while (electionContainer.lastChild) {
+    electionContainer.removeChild(electionContainer.lastChild)
+  }
+}
 // removes article tage from the dome when a search is submitted
 const removeArticle = () => {
   let article = document.querySelector('article')
-  document.body.removeChild(article)
+    document.body.removeChild(article)
 }
 // event listener for the submit search button
 form.addEventListener('submit', e => {
   e.preventDefault()
   removeReps()
-  removeArticle()
+  // removeArticle()
   const inputValue = document.querySelector('#adress').value
   console.log(inputValue)
   fetchData(inputValue)
+  fetchElectionData(inputValue)
+  removeArticle()
 })
 // event listener for the clear search results buttons
-form.addEventListener('reset',removeReps)
+form.addEventListener('reset', () => {
+  removeReps()
+  removeElection()
+})
+
