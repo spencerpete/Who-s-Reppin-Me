@@ -1,9 +1,12 @@
+/* Main Styling for mobile */
+
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #7395AE;
 }
 
 header {
-  background-color: darkgray;
+  background-color: rgb(144, 141, 146);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +32,7 @@ button, input {
 }
 
 button {
-  background-color: #7c6beb;
+  background-color: rgb(171, 161, 148);
 }
 
 .rep-container {
@@ -42,7 +45,7 @@ button {
 .rep-data {
   border: 1px solid darkgray;
   border-radius: 5px;
-  background-color: aliceblue;
+  background-color: #557A95;
   box-shadow: 5px 5px 5px;
   width: 95%;
   height: 200px;
@@ -67,7 +70,7 @@ button {
   margin: 5px auto;
 }
 
-/* Desktop web formatting */
+/* Desktop styling */
 
 @media only screen and (min-width: 600px){
 header {

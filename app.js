@@ -1,7 +1,7 @@
 const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
 const myKey = config.myApiKey
-
+// Function gathers data from Civiv info API
 const fetchData = async (input) => {
   const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
   try {
@@ -13,6 +13,7 @@ const fetchData = async (input) => {
     console.error(error)
   }
 }
+// This functions gathers needed data and attaches them to elemtentsthat will be appended to the DOM
 const repData = (response) => {
   const offices = response.data.offices
   const officials = response.data.officials
@@ -39,17 +40,18 @@ const repData = (response) => {
     });
   });
 }
+// Removes the data of the search from the DOM 
 const removeReps = () => {
   while (repContianer.lastChild) {
     repContianer.removeChild(repContianer.lastChild)
   }
 }
-
+// removes article tage from the dome when a search is submitted
 const removeArticle = () => {
   let article = document.querySelector('article')
   document.body.removeChild(article)
 }
-
+// event listener for the submit search button
 form.addEventListener('submit', e => {
   e.preventDefault()
   removeReps()
@@ -58,4 +60,5 @@ form.addEventListener('submit', e => {
   console.log(inputValue)
   fetchData(inputValue)
 })
+// event listener for the clear search results buttons
 form.addEventListener('reset',removeReps)
