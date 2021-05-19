@@ -2,7 +2,9 @@ const repSearch = document.querySelector('.rep-search')
 const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
 const electionContainer = document.querySelector('.election-container')
+const electionSearch = document.querySelector('.election-search')
 const myKey = config.myApiKey
+// const inputValue = document.querySelector('#adress').value
 // Function gathers data from Civiv info API
 const fetchData = async (input) => {
   const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
@@ -48,11 +50,14 @@ const electionData = result => {
     const pollingHours = result.data.pollingLocations[0].pollingHours
     showElectionData = `
     <div class='election-results'>
-      <h3>Your Next Upcoming Election :</h3>
-      <h4>Elction : ${election}</h4>
-      <h4>Day : ${electionDay}</h4>
-      <h4>Polling Place : ${pollingBuilding}, ${pollingAdress}, ${pollingCity} ${pollingState} ${pollingZip}</h4>
-      <h4>Hours : ${pollingHours}</h4>
+      <img class='vote' src="https://www.cochise.az.gov/sites/default/files/recorder/vote.png">
+      <div class='e-info-container'>
+        <h3>Your Next Upcoming Election :</h3>
+        <h4 class='election-info'>Elction : ${election}</h4>
+        <h4 class='election-info'>Day : ${electionDay}</h4>
+        <h4 class='election-info'>Polling Place : ${pollingBuilding}, ${pollingAdress}, ${pollingCity} ${pollingState} ${pollingZip}</h4>
+        <h4 class='election-info'>Hours : ${pollingHours}</h4>
+      </div>
     </div>
     `
   }
@@ -101,15 +106,24 @@ const removeArticle = () => {
   let article = document.querySelector('article')
     document.body.removeChild(article)
 }
+
+electionSearch.addEventListener('click', () => {
+  const inputValue = document.querySelector('#adress').value
+  fetchElectionData(inputValue)
+  removeReps()
+  removeElection()
+  removeArticle()
+})
 // event listener for the submit search button
 form.addEventListener('submit', e => {
   e.preventDefault()
   removeReps()
+  removeElection()
   // removeArticle()
   const inputValue = document.querySelector('#adress').value
   console.log(inputValue)
   fetchData(inputValue)
-  fetchElectionData(inputValue)
+  // fetchElectionData(inputValue)
   removeArticle()
 })
 // event listener for the clear search results buttons
@@ -118,3 +132,9 @@ form.addEventListener('reset', () => {
   removeElection()
 })
 
+// form.addEventListener('click', () => {
+//   const inputValue = document.querySelector('#adress').value
+//   fetchElectionData(inputValue)
+//   removeReps()
+//   removeElection()
+// })

@@ -77,8 +77,20 @@ button {
 .election-results {
   background-color: #557A95;
   border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px;
   padding: 10px;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vote {
+  width: 50%;
+  align-self: center;
+}
+.election-info {
+  margin: 5px;
 }
 
 /* Desktop styling */
@@ -102,5 +114,14 @@ article{
 }
 .rep-info {
   font-size: 12px;
+}
+.election-results {
+  flex-direction: row;
+}
+.vote {
+  width: 30%;
+}
+.e-info-container {
+  margin: 0 20px;
 }
 }
