@@ -4,8 +4,7 @@ const repContianer = document.querySelector('.rep-container')
 const electionContainer = document.querySelector('.election-container')
 const electionSearch = document.querySelector('.election-search')
 const myKey = config.myApiKey
-// const inputValue = document.querySelector('#adress').value
-// Function gathers data from Civiv info API
+// Function gathers rep data from Civiv info API
 const fetchData = async (input) => {
   const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
   try {
@@ -17,7 +16,7 @@ const fetchData = async (input) => {
     console.error(error)
   }
 }
-
+// gathers election data from the Civic Info API
 const fetchElectionData = async (input) => {
   const url = `https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=${input}&officialOnly=true&returnAllAvailableData=true&key=${myKey}`
   try {
@@ -32,6 +31,7 @@ const fetchElectionData = async (input) => {
 }
 const electionData = result => {
   let showElectionData;
+  // the if statement sees if the users registered address has a upcoming election. if they do not it returns "no upcomg election" otherwise it returns the upcoming election data
   if (result.data.election == null) {
     showElectionData =`
     <div class='election-results'>
@@ -64,7 +64,7 @@ const electionData = result => {
   }
   electionContainer.insertAdjacentHTML("beforeend", showElectionData)
 }
-// This functions gathers needed data and attaches them to elemtentsthat will be appended to the DOM
+// This functions gathers needed data for the rep search and attaches them to elemtents that will be appended to the DOM
 const repData = (response) => {
   const offices = response.data.offices
   const officials = response.data.officials
@@ -91,12 +91,13 @@ const repData = (response) => {
     });
   });
 }
-// Removes the data of the search from the DOM 
+// Removes rep search results 
 const removeReps = () => {
   while (repContianer.lastChild) {
     repContianer.removeChild(repContianer.lastChild)
   }
 }
+// removes election results
 const removeElection = () => {
   while (electionContainer.lastChild) {
     electionContainer.removeChild(electionContainer.lastChild)
@@ -107,7 +108,7 @@ const removeArticle = () => {
   let article = document.querySelector('article')
     document.body.removeChild(article)
 }
-
+// event listener for the election search buttom
 electionSearch.addEventListener('click', () => {
   const inputValue = document.querySelector('#adress').value
   fetchElectionData(inputValue)
@@ -115,16 +116,14 @@ electionSearch.addEventListener('click', () => {
   removeElection()
   removeArticle()
 })
-// event listener for the submit search button
+// event listener for the rep search button
 form.addEventListener('submit', e => {
   e.preventDefault()
   removeReps()
   removeElection()
-  // removeArticle()
   const inputValue = document.querySelector('#adress').value
   console.log(inputValue)
   fetchData(inputValue)
-  // fetchElectionData(inputValue)
   removeArticle()
 })
 // event listener for the clear search results buttons
@@ -133,9 +132,4 @@ form.addEventListener('reset', () => {
   removeElection()
 })
 
-// form.addEventListener('click', () => {
-//   const inputValue = document.querySelector('#adress').value
-//   fetchElectionData(inputValue)
-//   removeReps()
-//   removeElection()
-// })
+
