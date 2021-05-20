@@ -114,6 +114,9 @@ article{
   justify-content: space-between;
   box-shadow: none;
 }
+input:hover {
+  border: 1px solid lightgray;
+}
 button:hover, .rep-data:hover, .election-results:hover {
   transform: translateX(-3px);
   transform: translateY(-3px);

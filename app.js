@@ -40,7 +40,8 @@ const electionData = result => {
     `
   } else {
     const election = result.data.election.name
-    const electionDay = result.data.election.electionDay
+    let electionDay = new Date(result.data.election.electionDay)
+    electionDay = electionDay.toDateString()
     const pollingLocation = result.data.pollingLocations[0].address
     const pollingCity = pollingLocation.city
     const pollingAdress = pollingLocation.line1
