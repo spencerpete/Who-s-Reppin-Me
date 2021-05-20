@@ -6,7 +6,6 @@ body {
 }
 
 header {
-  /* background-color: rgba(144, 141, 146, .75); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,17 +26,19 @@ form {
 }
 
 button, input {
+  border: none;
   border-radius: 5px;
   margin: 10px 5px;
   padding: 5px 8px;
 }
 
 button {
+  font-family: 'Poppins', sans-serif;
   background-color: rgb(171, 161, 148);
 }
 
+
 .rep-container {
-  /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -111,12 +112,24 @@ article{
   width: 180px;
   height: 330px;
   justify-content: space-between;
+  box-shadow: none;
+}
+button:hover, .rep-data:hover, .election-results:hover {
+  transform: translateX(-3px);
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 5px;
+}
+button:active{
+  transform: translateY(3px);
+  transform: translateX(3px);
+  box-shadow: none;
 }
 .rep-info {
   font-size: 12px;
 }
 .election-results {
   flex-direction: row;
+  box-shadow: none;
 }
 .vote {
   width: 30%;
