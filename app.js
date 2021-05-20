@@ -21,7 +21,6 @@ const fetchElectionData = async (input) => {
   const url = `https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=${input}&officialOnly=true&returnAllAvailableData=true&key=${myKey}`
   try {
     const result = await axios.get(url)
-    console.log(result)
     electionData(result)
     return result
     // return result 
@@ -73,18 +72,17 @@ const repData = (response) => {
     const officialIndices = element.officialIndices
     let title = element.name
     officialIndices.forEach(element => {
-      let websiteUrl = officials[element].urls[0]
+      let websiteUrl = officials[element].urls
       let name = officials[element].name
       let imgUrl = officials[element].photoUrl
-      let phone = officials[element].phones[0]
+      let phone = officials[element].phones
       let showRepData = `
     <div class="rep-data">
       <img class='rep-img'src=${imgUrl} onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Greater_coat_of_arms_of_the_United_States.svg/270px-Greater_coat_of_arms_of_the_United_States.svg.png'">
       <div class='rep-info'>
-        <h4 class='rep-info-contnt'>${title} :</br>${name}</h4>
-        <h4 class='rep-info-contnt'>Website : <a href=${websiteUrl}>Rep site</a></h4>
-        <h4 class='rep-info-contnt'>Contact : <a href='tel:'${phone}>${phone}</a></h4>
-        <button class='rep-info-contnt' type="submit">Save Reps Info</button>
+        <h4 class='rep-info-contnt' id='rep-name'>${title} :</br>${name}</h4>
+        <h4 class='rep-info-contnt' id='rep-website'>Website : <a href=${websiteUrl}>Rep's website</a></h4>
+        <h4 class='rep-info-contnt' id='rep-phone'>Contact : <a href='tel:'${phone}>${phone}</a></h4>
       </div>  
     </div>
     `
@@ -123,7 +121,6 @@ form.addEventListener('submit', e => {
   removeReps()
   removeElection()
   const inputValue = document.querySelector('#adress').value
-  console.log(inputValue)
   fetchData(inputValue)
   removeArticle()
 })
@@ -133,4 +130,16 @@ form.addEventListener('reset', () => {
   removeElection()
 })
 
+// const saveBttn = document.querySelector('#save-bttn')
 
+// const saveInfo = () => {
+//   let repName = document.querySelector('#rep-name').textContent
+//   let repWebsite = document.querySelector('#rep-website').textContent
+//   let repPhone = document.querySelector('#rep-phone').textContent
+//   localStorage.setItem('name', repName)
+//   localStorage.setItem('website', repWebsite)
+//   localStorage.setItem('phone', repPhone)
+//   console.log(localStorage)
+// }
+
+// saveBttn.addEventListener('click', saveInfo)

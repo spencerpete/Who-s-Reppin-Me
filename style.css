@@ -1,6 +1,10 @@
 /* Main Styling for mobile */
 
 body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
   font-family: 'Poppins', sans-serif;
   background-color: #7395AE;
 }
@@ -74,6 +78,7 @@ button {
 .election-container {
   display: flex;
   justify-content: center;
+  /* margin-bottom: 300px; */
 }
 .election-results {
   background-color: #557A95;
@@ -93,6 +98,18 @@ button {
 .election-info {
   margin: 5px;
 }
+footer { 
+  background-color: #557A95;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+p.footer-text {
+  align-self: center;
+  font-size: x-small;
+  width: fit-content;
+}
 
 /* Desktop styling */
 
@@ -110,7 +127,7 @@ article{
   display: flex;
   flex-direction: column;
   width: 180px;
-  height: 330px;
+  height: 300px;
   justify-content: space-between;
   box-shadow: none;
 }
