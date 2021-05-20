@@ -45,7 +45,7 @@ button {
 .rep-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .rep-data {
@@ -55,7 +55,7 @@ button {
   box-shadow: 5px 5px 5px;
   width: 95%;
   height: 200px;
-  margin: 10px auto;
+  margin: 10px 20px;
   display: flex;
   justify-content: space-around;
 }
