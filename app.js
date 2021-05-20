@@ -57,6 +57,7 @@ const electionData = result => {
         <h4 class='election-info'>Day : ${electionDay}</h4>
         <h4 class='election-info'>Polling Place : ${pollingBuilding}, ${pollingAdress}, ${pollingCity} ${pollingState} ${pollingZip}</h4>
         <h4 class='election-info'>Hours : ${pollingHours}</h4>
+        <button><a href="https://www.google.com/maps/search/${pollingAdress}${pollingCity}">Find on Maps</a></button>
       </div>
     </div>
     `
