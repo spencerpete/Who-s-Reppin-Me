@@ -3,7 +3,7 @@ const form = document.querySelector('form')
 const repContianer = document.querySelector('.rep-container')
 const electionContainer = document.querySelector('.election-container')
 const electionSearch = document.querySelector('.election-search')
-const myKey = config.myApiKey
+const myKey = "AIzaSyC0u348ouE2XSgQqYf6SXKRmqfVdxqtehE"
 // Function gathers rep data from Civiv info API
 const fetchData = async (input) => {
   const url = `https://www.googleapis.com/civicinfo/v2/representatives/?roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=legislatorUpperBody&roles=legislatorLowerBody&address=${input}&key=${myKey}`
