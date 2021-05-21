@@ -64,21 +64,21 @@ https://reppin.airfocus.com/share/7b4abab49f06f0207877edc0adb254ac
 ### Time Line 
 Task | Estimated Time | Current TIme | Actual Time
 --- | --- | --- | ---
-Lay Down basic HTML | 1 hr |  |
-Fetch API Data | 3 hr |  |
-Organize data with filters | 4 hr |  |
-Append Data to responsive Elements | 3 hr |  |
-Connect search input value with Axios search param. | 2 hr |  | 
-Run test with mult. input values | 2 hr |  |
-remove previous search results | 3hr |  |
-Debug any issues | 2 hr |  |
-Refactor JS functionality  | 2 hr |  |
-CSS Styling of Search bar and input | 2 hr |  |
-CSS Styling of Header  | 1 hr |  |
-CSS Styling of 'Rep' boxes | 2 hr  |  |
-CSS responsive design (mobile) | 2 hr | |
-CSS responsive design  (desktop) | 3 hr |  |
-Total | 32 hr |  |
+Lay Down basic HTML | 1 hr | 45 min | 45 min
+Fetch API Data | 3 hr | 2 hr 30 min |   2 hr 30 min
+Organize data with filters | 4 hr | 3 hr | 3 hr
+Append Data to responsive Elements | 3 hr | 2 hr 30 min | 2 hr 30 min
+Connect search input value with Axios search param. | 2 hr | 1 hr | 1 hr
+Run test with mult. input values | 2 hr | 1 hr 30 min | 1 hr 30 min
+remove previous search results | 3hr | 2 hr |   2 hr
+Debug any issues | 2 hr | 2 hr | 2 hr
+Refactor JS functionality  | 2 hr | 2 hr | 2 hr 
+CSS Styling of Search bar and input | 2 hr | 2 hr | 2 hr
+CSS Styling of Header  | 1 hr | 30 min | 30 min
+CSS Styling of 'Rep' boxes | 2 hr  | 3 hr | 3 hr     
+CSS responsive design (mobile) | 2 hr | 2hr | 2 hr
+CSS responsive design  (desktop) | 3 hr | 4 hr | 4 hr
+Total | 32 hr | 28 hr 45 min | 28 hr 45 min
 
 
 
