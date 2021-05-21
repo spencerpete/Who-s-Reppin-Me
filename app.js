@@ -129,17 +129,3 @@ form.addEventListener('reset', () => {
   removeReps()
   removeElection()
 })
-
-// const saveBttn = document.querySelector('#save-bttn')
-
-// const saveInfo = () => {
-//   let repName = document.querySelector('#rep-name').textContent
-//   let repWebsite = document.querySelector('#rep-website').textContent
-//   let repPhone = document.querySelector('#rep-phone').textContent
-//   localStorage.setItem('name', repName)
-//   localStorage.setItem('website', repWebsite)
-//   localStorage.setItem('phone', repPhone)
-//   console.log(localStorage)
-// }
-
-// saveBttn.addEventListener('click', saveInfo)

@@ -35,7 +35,18 @@ button, input {
   margin: 10px 5px;
   padding: 5px 8px;
 }
-
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
 button {
   font-family: 'Poppins', sans-serif;
   background-color: rgb(171, 161, 148);
@@ -110,7 +121,15 @@ p.footer-text {
   font-size: x-small;
   width: fit-content;
 }
+.icons {
+  display: flex;
+  justify-content: center;
+}
 
+a.icon-links {
+  font-size: x-large;
+  margin: 0 5px;
+}
 /* Desktop styling */
 
 @media only screen and (min-width: 600px){
